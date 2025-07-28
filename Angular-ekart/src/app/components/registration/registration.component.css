@@ -1,0 +1,9 @@
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+/* .card-header{
+  background-color: #e8f1f5;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+} */

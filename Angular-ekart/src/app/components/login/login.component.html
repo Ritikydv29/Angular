@@ -1,0 +1,52 @@
+<!-- ng style 'background-color':'#ecf0f1', -->
+  <div class="container mt-5 align-items-center mx-auto shadow-sm" [ngStyle]="{'width':'50%'}">
+    <form [formGroup]="Studentform"(ngSubmit)="onSubmit()"  class="mx-auto" style="width: 100%; max-width: 600px;">
+      <h1 class="text-lg-center" [ngStyle]="{'background-color':'#ecf0f1'}"> <b>Login Here</b></h1>
+  
+
+    <div class="ms-3">
+      <label for="inputEmail" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" formControlName="Email" />
+      <div *ngIf="
+          Studentform.get('Email').invalid &&
+          (Studentform.get('Email').dirty || Studentform.get('Email').touched)
+        " class="text-danger">
+        <div *ngIf="Studentform.get('Email').errors?.['required']">
+          Email is required.
+        </div>
+        <div *ngIf="Studentform.get('Email').errors?.['email']">
+          Enter a valid email (e.g. name@example.com).
+        </div>
+      </div>
+    </div>
+
+    <div class="ms-3">
+      <label for="inputPassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="inputPassword" placeholder="Enter your password"
+        formControlName="Password" />
+      <div *ngIf="
+          Studentform.get('Password').invalid &&
+          (Studentform.get('Password').dirty || Studentform.get('Password').touched)
+        " class="text-danger">
+        <div *ngIf="Studentform.get('Password').errors?.['required']">
+          Password is required.
+        </div>
+        <div *ngIf="Studentform.get('Password').errors?.['pattern']">
+          Password must be at least 8 characters long and contain at least one letter and one number.
+        </div>
+      </div>
+    </div>
+     <div class="container mt-3">
+    <button class="btn btn-primary ms-3 mt-3" type="submit" [disabled]="Studentform.invalid">Submit</button>
+  </div>
+  <div>
+          <b>Don't have an Account RegisterHere </b>
+      <a routerLink="/Register" routerLinkActive="active">
+  
+        <button class="btn btn-secondary">Register</button> </a>
+  </div>
+
+    </form>
+  </div>
+  
+ 
