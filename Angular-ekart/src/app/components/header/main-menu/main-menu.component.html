@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar" href="#" >
+  </a>
+
+  <a  routerLink="/Home" routerLinkActive="active">Home</a>
+  
+  <!-- <a href="#">About</a> -->
+ <a routerLink="/Products" routerLinkActive="active">Products</a>
+
+<!-- <a routerLink="/Cart" routerLinkActive="active">
+  🛒 Cart {{cartlength}}
+</a> -->
+
+<a routerLink="/Cart" routerLinkActive="active" class="position-relative text-decoration-none">
+  🛒 Cart
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    {{ cartlength }}
+    <span class="visually-hidden">cart items</span>
+  </span>
+</a>
+
+
+  <!-- <a routerLink="/Register" routerLinkActive="active">Register </a> -->
+  <a routerLink="/Login" routerLinkActive="active">Login </a>
+  <a   routerLink="/Logout" routerLinkActive="active">Logout </a>
+  <!-- <div class="ms-auto">Cart 🛒</div> -->
+   <br>
+   <div class="ekart--search-bar" style="display: flex; justify-content: right;">
+                <input type="text" class="ekart-search-box" placeholder="Search" [ngStyle]="{'background-color': 'lavender'}">
+                <button class="ekart--search--btn" >
+                    <i class="fa fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+            
+</nav>
