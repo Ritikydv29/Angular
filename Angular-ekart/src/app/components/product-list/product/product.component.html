@@ -1,0 +1,25 @@
+
+
+<div class="card-body">
+      <img [src]="product.imageURL" class="card-img-top" [alt]="product.name" *ngIf="product.imageURL">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">${{ product.price }}</p>
+        <!-- <button class="btn btn-primary" (click)="openModal(product.description)">View Description</button> -->
+</div>
+<!-- Description Modal -->
+<!-- <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalLabel">Product Description</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>{{ modalDescription || 'No description available.' }}</p>
+      </div>
+
+    </div>
+  </div>
+</div> -->

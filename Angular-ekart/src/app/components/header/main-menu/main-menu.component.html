@@ -21,8 +21,8 @@
 
 
   <!-- <a routerLink="/Register" routerLinkActive="active">Register </a> -->
-  <a routerLink="/Login" routerLinkActive="active">Login </a>
-  <a   routerLink="/Logout" routerLinkActive="active">Logout </a>
+  <a routerLink="/Login" routerLinkActive="active"  *ngIf="!IsLoggedIn">Login </a>
+  <a   routerLink="/Logout" routerLinkActive="active" *ngIf="IsLoggedIn">Logout </a>
   <!-- <div class="ms-auto">Cart 🛒</div> -->
    <br>
    <div class="ekart--search-bar" style="display: flex; justify-content: right;">

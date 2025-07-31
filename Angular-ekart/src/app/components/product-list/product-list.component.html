@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <b>Categories</b>
+  <div class="d-flex flex-wrap gap-2">
+    <div
+      *ngFor="let category of categories"
+      (click)="filterProductsByCategory(category.categoryId)"
+      [class.bg-primary]="selectedCategoryId === category.categoryId"
+      class="p-2 border rounded text-center"
+      style="cursor: pointer; min-width: 100px; color: rgb(214, 86, 86);"
+    >
+      {{ category.category }}
+    </div>
+  </div>
+</div>
+
+<!-- <filter [all]="products.length" [instock]="Available" [outofstock]="OutOfStock" (onSelectionAvailabilityChange)="onfilterChange($event)"></filter> -->
+<div class="row">
+    <ng-container  *ngFor="let product of items">
+         <div class="col-3" *ngIf="product.imageName && product.imageName.trim() !== ''">
+            <div>
+      <img [src]="product.imageName" alt="{{ product.title }}" class="img-fluid" style="max-height: 200px;" />
+    </div>
+     <b>{{ product.title }}</b>
+     <br>
+     <strong [ngStyle]="{'color':'red'}">Price: ₹{{ product.price }}</strong>
+     <br>
+     <div  style="cursor: pointer;" > 
+    <div >
+      <button class="btn btn-primary" (click)="addtoCart(product)">
+        Add to Cart
+      </button>
+     
+    </div>
+
+      </div >
+      <button class="btn btn-primary" (click)="openModal(product.description)">View Description</button>
+    <!-- <p>{{ product.description }}</p> -->
+    
+    
+  </div>
+    </ng-container>
+ <!-- description -->
+</div >
+<div class="modal fade " id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalLabel">Product Description</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <p>{{ modalDescription || 'No description available.' }}</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    <!-- <app-product [product]="prod"></app-product> -->
+

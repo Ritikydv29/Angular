@@ -16,7 +16,7 @@ export class LogoutComponent  {
              duration: 2000
             });
   
-    this.router.navigate(['/Products']);
+    this.router.navigate(['/Login']);
   }
 
 }
